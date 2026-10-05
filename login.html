@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="login-page">
+    <main class="login-contenedor">
+        <header class="login-header">
+            <span class="login-icono" aria-hidden="true">📖</span>
+            <h1>Sistema de Biblioteca</h1>
+            <p>Acceda al panel seleccionando su tipo de rol</p>
+        </header>
+
+        <div class="login-campo">
+            <label for="usuario-demo">Usuario / Correo</label>
+            <input id="usuario-demo" type="text" value="invitado_prueba@biblioteca.com" readonly>
+        </div>
+
+        <nav class="perfil-seleccion" aria-label="Selección de perfil">
+            <a href="index.html" class="btn-perfil btn-admin">Ingresar como Administrador</a>
+            <a href="inicio_usuario.html" class="btn-perfil btn-usuario">Ingresar como Usuario</a>
+        </nav>
+
+        <p class="credenciales-nota">Simulación estática para entorno de pruebas de interfaz.</p>
+    </main>
+</body>
+</html>

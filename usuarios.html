@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Usuarios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+                <div>
+                    <h2>Sistema de Inventario</h2>
+                    <span>de Biblioteca</span>
+                </div>
+            </div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">
+                    <span class="icono">⌂</span><span>Inicio</span>
+                </a>
+                <a href="libros.html" class="menu-item">
+                    <span class="icono">📚</span><span>Libros</span>
+                </a>
+                
+                <a href="usuarios.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">♙</span><span>Usuarios</span>
+                </a>
+                <a href="prestamos.html" class="menu-item">
+                    <span class="icono">📖</span><span>Préstamos</span>
+                </a>
+                <a href="devoluciones.html" class="menu-item">
+                    <span class="icono">↩</span><span>Devoluciones</span>
+                </a>
+                <a href="reportes.html" class="menu-item">
+                    <span class="icono">▥</span><span>Reportes</span>
+                </a>
+            </nav>
+            <div class="cerrar-sesion">
+			    <a href="login.html">
+			        <span>↪</span>
+			        Cerrar sesión
+			    </a>
+			</div>
+        </aside>
+       
+        <main class="contenido-principal">
+            
+            
+            <header class="cabecera">
+                <div class="titulo-pagina">
+                    <h1>Gestión de Usuarios</h1>
+                    <p>Control de miembros registrados en la biblioteca</p>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="avatar">👤</span>
+                    <div class="info-perfil">
+                        <strong>Administrador</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            
+            <section class="filtros" data-filtro-tabla="#tabla-usuarios">
+                <div class="buscador">
+                    <input type="text" placeholder="Buscar usuario por nombre o ID...">
+                    <button class="btn-buscar" type="button">Buscar</button>
+                </div>
+                <a href="#modal-usuario" class="btn-agregar enlace-boton">+ Agregar Usuario</a>
+            </section>
+
+           
+            <section class="tabla-contenedor">
+                <table id="tabla-usuarios" class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre Completo</th>
+                            <th>Correo Electrónico</th>
+                            <th>Tipo de Miembro</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>USR-001</strong></td>
+                            <td>Carlos Mendoza</td>
+                            <td>carlos.mendoza@email.com</td>
+                            <td>Estudiante</td>
+                            <td><span class="estado activo-tag">Activo</span></td>
+                            <td><button class="btn-ver" type="button">Ver</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>USR-002</strong></td>
+                            <td>Ana Lucía Torres</td>
+                            <td>ana.torres@email.com</td>
+                            <td>Profesor</td>
+                            <td><span class="estado activo-tag">Activo</span></td>
+                            <td><button class="btn-ver" type="button">Ver</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>USR-003</strong></td>
+                            <td>Martín Flores</td>
+                            <td>martin.f@email.com</td>
+                            <td>Estudiante</td>
+                            <td><span class="estado deudor-tag">Con Multa</span></td>
+                            <td><button class="btn-ver" type="button">Ver</button></td>
+                        </tr>
+                        <tr class="fila-resumen">
+                            <td colspan="6">
+                                • • • Mostrando 3 de 342 usuarios registrados • • •
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div> 
+    
+    <div id="modal-usuario" class="modal-overlay">
+	    <div class="modal-box">
+	        <h2>Registro de Nuevo Usuario</h2>
+	        <p class="modal-sub">Formulario de inscripción para la biblioteca</p>
+	        
+	        <form class="modal-form">
+	            <div class="form-row">
+	                <div class="form-group">
+	                    <label>Primer Nombre</label>
+	                    <input type="text" value="Juan" disabled>
+	                </div>
+	                <div class="form-group">
+	                    <label>Segundo Nombre</label>
+	                    <input type="text" value="Carlos" disabled>
+	                </div>
+	            </div>
+	
+	            <div class="form-row">
+	                <div class="form-group">
+	                    <label>Primer Apellido</label>
+	                    <input type="text" value="Pérez" disabled>
+	                </div>
+	                <div class="form-group">
+	                    <label>Segundo Apellido</label>
+	                    <input type="text" value="Gómez" disabled>
+	                </div>
+	            </div>
+	
+	            <div class="form-group">
+	                <label>Número de Teléfono</label>
+	                <input type="text" value="+507 6123-4567" disabled>
+	            </div>
+	
+	            <div class="form-group">
+	                <label>Correo Electrónico</label>
+	                <input type="email" value="juan.perez@email.com" disabled>
+	            </div>
+	
+	            <div class="form-group">
+	                <label>Tipo de Miembro</label>
+	                <input type="text" value="Estudiante" disabled>
+	            </div>
+	
+	            <div class="modal-actions">
+	                <a href="usuarios.html" class="btn-cancelar">Cancelar</a>
+	                <a href="usuarios.html" class="btn-guardar">Añadir</a>
+	            </div>
+	        </form>
+	    </div>
+	</div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
+        

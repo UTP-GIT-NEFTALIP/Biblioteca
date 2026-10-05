@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Inventario - Biblioteca</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+
+                <div>
+                    <h2>Sistema de Inventario</h2>
+                    <span>de Biblioteca</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+
+                <a href="index.html" class="menu-item">
+                    <span class="icono">⌂</span>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="libros.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">📚</span>
+                    <span>Libros</span>
+                </a>
+
+                <a href="usuarios.html" class="menu-item">
+                    <span class="icono">♙</span>
+                    <span>Usuarios</span>
+                </a>
+
+                <a href="prestamos.html" class="menu-item">
+                    <span class="icono">📖</span>
+                    <span>Préstamos</span>
+                </a>
+
+                <a href="devoluciones.html" class="menu-item">
+                    <span class="icono">↩</span>
+                    <span>Devoluciones</span>
+                </a>
+
+                <a href="reportes.html" class="menu-item">
+                    <span class="icono">▥</span>
+                    <span>Reportes</span>
+                </a>
+
+             
+
+            </nav>
+
+            <div class="cerrar-sesion">
+			    <a href="login.html">
+			        <span>↪</span>
+			        Cerrar sesión
+			    </a>
+			</div>
+
+        </aside>
+
+        <main class="contenido">
+
+            <!-- HEADER -->
+            <header class="header">
+
+                <div class="titulo-header">
+                    <button class="boton-menu" type="button">☰</button>
+
+                    <div>
+                        <h1>Biblioteca</h1>
+                        <p>Sistema de inventario</p>
+                    </div>
+                </div>
+
+                <div class="usuario">
+
+                    <div class="usuario-icono">
+                        👤
+                    </div>
+
+                    <div class="usuario-info">
+                        <strong>Administrador</strong>
+                        <span>Admin</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </div>
+
+            </header>
+
+            <section class="banner">
+
+                <div class="banner-texto">
+
+                    <p class="frase">
+                        "Los libros son<br>
+                        puertas a nuevos mundos"
+                    </p>
+
+                    <div class="libro-banner">
+                        📖
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="estadisticas">
+
+                <div class="tarjeta">
+
+                    <div class="tarjeta-icono libros">
+                        📖
+                    </div>
+
+                    <div class="tarjeta-info">
+                        <span>Total de libros</span>
+                        <strong>1,248</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <div class="tarjeta-icono disponibles">
+                        ✓
+                    </div>
+
+                    <div class="tarjeta-info">
+                        <span>Disponibles</span>
+                        <strong>986</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <div class="tarjeta-icono prestados">
+                        ●
+                    </div>
+
+                    <div class="tarjeta-info">
+                        <span>Prestados</span>
+                        <strong>262</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="filtros">
+
+                <div class="buscador">
+
+                    <span>⌕</span>
+
+                    <input id="buscar-libro"
+                        type="text"
+                        placeholder="Buscar por título, autor o ISBN..."
+                    >
+
+                </div>
+
+
+                <div class="filtro">
+
+                    <label>Categoría</label>
+
+                    <select id="filtro-categoria">
+                        <option>Todas</option>
+                        <option>Novela</option>
+                        <option>Ficción</option>
+                        <option>Historia</option>
+                        <option>Informática</option>
+                    </select>
+
+                </div>
+
+
+                <div class="filtro">
+
+                    <label>Estado</label>
+
+                    <select id="filtro-estado">
+                        <option>Todos</option>
+                        <option>Disponible</option>
+                        <option>Prestado</option>
+                    </select>
+
+                </div>
+
+
+                <button class="btn-buscar" type="button">
+                    Buscar
+                </button>
+
+            </section>
+
+            <section class="inventario">
+
+                <div class="titulo-seccion">
+
+                    <div>
+                        <h2>Inventario de Libros</h2>
+                        <p>Consulta los libros registrados en la biblioteca</p>
+                    </div>
+
+                    <button class="btn-agregar" type="button" data-mensaje="Formulario de alta de libros listo para conectarse a la base de datos.">
+                        + Agregar libro
+                    </button>
+
+                </div>
+
+
+                <div class="tabla-contenedor">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Portada</th>
+                                <th>Título</th>
+                                <th>Autor</th>
+                                <th>Categoría</th>
+                                <th>Estado</th>
+                                <th>Ubicación</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr class="fila-libro" data-titulo="Cien años de soledad" data-autor="Gabriel García Márquez" data-isbn="978-0307474728" data-categoria="Novela" data-estado="Disponible" data-ubicacion="Estante A3">
+
+                                <td>
+                                    <div class="portada portada-1">
+                                        📗
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong>Cien años de soledad</strong>
+                                </td>
+
+                                <td>
+                                    Gabriel García Márquez
+                                </td>
+
+                                <td>
+                                    Novela
+                                </td>
+
+                                <td>
+                                    <span class="estado disponible">
+                                        ● Disponible
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Estante A3
+                                </td>
+
+                                <td>
+                                    <button class="btn-ver" type="button">
+                                        Ver
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                            <tr class="fila-libro" data-titulo="1984" data-autor="George Orwell" data-isbn="978-0451524935" data-categoria="Ficción" data-estado="Prestado" data-ubicacion="Estante B1">
+
+                                <td>
+                                    <div class="portada portada-2">
+                                        📕
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong>1984</strong>
+                                </td>
+
+                                <td>
+                                    George Orwell
+                                </td>
+
+                                <td>
+                                    Ficción
+                                </td>
+
+                                <td>
+                                    <span class="estado prestado">
+                                        ● Prestado
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Estante B1
+                                </td>
+
+                                <td>
+                                    <button class="btn-ver" type="button">
+                                        Ver
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                            <tr class="fila-libro" data-titulo="Clean Code" data-autor="Robert C. Martin" data-isbn="978-0132350884" data-categoria="Informática" data-estado="Disponible" data-ubicacion="Estante C2">
+
+                                <td>
+                                    <div class="portada portada-3">
+                                        📘
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong>Clean Code</strong>
+                                </td>
+
+                                <td>
+                                    Robert C. Martin
+                                </td>
+
+                                <td>
+                                    Informática
+                                </td>
+
+                                <td>
+                                    <span class="estado disponible">
+                                        ● Disponible
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Estante C2
+                                </td>
+
+                                <td>
+                                    <button class="btn-ver" type="button">
+                                        Ver
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                            <tr class="fila-libro" data-titulo="Sapiens" data-autor="Yuval Noah Harari" data-isbn="978-0062316097" data-categoria="Historia" data-estado="Disponible" data-ubicacion="Estante D4">
+
+                                <td>
+                                    <div class="portada portada-4">
+                                        📙
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong>Sapiens</strong>
+                                </td>
+
+                                <td>
+                                    Yuval Noah Harari
+                                </td>
+
+                                <td>
+                                    Historia
+                                </td>
+
+                                <td>
+                                    <span class="estado disponible">
+                                        ● Disponible
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Estante D4
+                                </td>
+
+                                <td>
+                                    <button class="btn-ver" type="button">
+                                        Ver
+                                    </button>
+                                </td>
+
+                            </tr>
+                            
+                            <tr class="fila-resumen">
+                            <td colspan="7">
+                                • • • Mostrando 3 de 1,250 ejemplares en inventario • • •
+                            </td>
+                        	</tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <footer>
+                <p>
+                    © 2026 Sistema de Inventario de Biblioteca
+                </p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

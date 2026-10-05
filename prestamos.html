@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Préstamos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+                <div>
+                    <h2>Sistema de Inventario</h2>
+                    <span>de Biblioteca</span>
+                </div>
+            </div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">
+                    <span class="icono">⌂</span><span>Inicio</span>
+                </a>
+                <a href="libros.html" class="menu-item">
+                    <span class="icono">📚</span><span>Libros</span>
+                </a>
+                <a href="usuarios.html" class="menu-item">
+                    <span class="icono">♙</span><span>Usuarios</span>
+                </a>
+                <!-- Aquí pusimos la clase activo -->
+                <a href="prestamos.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">📖</span><span>Préstamos</span>
+                </a>
+                <a href="devoluciones.html" class="menu-item">
+                    <span class="icono">↩</span><span>Devoluciones</span>
+                </a>
+                <a href="reportes.html" class="menu-item">
+                    <span class="icono">▥</span><span>Reportes</span>
+                </a>
+            </nav>
+            <div class="cerrar-sesion">
+			    <a href="login.html">
+			        <span>↪</span>
+			        Cerrar sesión
+			    </a>
+			</div>
+        </aside>
+
+        <main class="contenido-principal">
+            
+            <header class="cabecera">
+                <div class="titulo-pagina">
+                    <h1>Registro de Préstamos</h1>
+                    <p>Monitoreo de libros y documentos en circulación</p>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="avatar">👤</span>
+                    <div class="info-perfil">
+                        <strong>Administrador</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="filtros" data-filtro-tabla="#tabla-prestamos">
+                <div class="buscador">
+                    <input type="text" placeholder="Buscar préstamo por ID, libro o usuario...">
+                    <button class="btn-buscar" type="button">Buscar</button>
+                </div>
+                <a href="#modal-prestamo" class="btn-agregar enlace-boton">+ Registrar Préstamo</a>
+            </section>
+
+            <section class="tabla-contenedor">
+                <table id="tabla-prestamos" class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID Préstamo</th>
+                            <th>Código Libro</th>
+                            <th>Título del Libro</th>
+                            <th>ID Usuario</th>
+                            <th>Nombre del Miembro</th>
+                            <th>Fecha Préstamo</th>
+                            <th>Fecha Vencimiento</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+					<tbody>
+                        <tr>
+                            <td><strong>PRST-901</strong></td>
+                            <td>LIB-1057</td> 
+                            <td>Cálculo Integral Vol. 1</td>
+                            <td>USR-001</td>
+                            <td>Carlos Mendoza</td>
+                            <td>18/09/2026</td>
+                            <td>02/10/2026</td>
+                            <td><span class="etiqueta-estado etiqueta-alerta">Prestado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRST-902</strong></td>
+                            <td>LIB-8841</td>
+                            <td>Don Quijote de la Mancha</td>
+                            <td>USR-003</td>
+                            <td>Martín Flores</td>
+                            <td>05/09/2026</td>
+                            <td>19/09/2026</td>
+                            <td><span class="etiqueta-estado etiqueta-alerta">Vencido</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRST-903</strong></td>
+                            <td>LIB-4022</td> 
+                            <td>Cien años de soledad</td>
+                            <td>USR-002</td>
+                            <td>Ana Lucía Torres</td>
+                            <td>25/09/2026</td>
+                            <td>09/10/2026</td>
+                            <td><span class="etiqueta-estado etiqueta-exito">Devuelto</span></td>
+                        </tr>
+                        
+                        <tr class="fila-resumen">
+                            <td colspan="8">
+                                • • • Mostrando 3 de 115 ejemplares en préstamos • • •
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+	<div id="modal-prestamo" class="modal-overlay">
+	    <div class="modal-box">
+	        <h2>Registrar Nuevo Préstamo</h2>
+	        <p class="modal-sub">Asignación de libros a usuarios registrados</p>
+	        
+	        <form class="modal-form">
+	            <div class="form-group">
+	                <label>Código del Libro</label>
+	                <input type="text" value="LIB-1057" disabled>
+	            </div>
+	
+	            <div class="form-group">
+	                <label>Título del Libro</label>
+	                <input type="text" value="Cálculo Integral Vol. 1" disabled>
+	            </div>
+	
+	            <div class="form-row">
+	                <div class="form-group">
+	                    <label>ID Usuario</label>
+	                    <input type="text" value="USR-001" disabled>
+	                </div>
+	                <div class="form-group">
+	                    <label>Nombre del Miembro</label>
+	                    <input type="text" value="Carlos Mendoza" disabled>
+	                </div>
+	            </div>
+	
+	            <div class="form-row">
+	                <div class="form-group">
+	                    <label>Fecha Préstamo</label>
+	                    <input type="text" value="02/10/2026" disabled>
+	                </div>
+	                <div class="form-group">
+	                    <label>Fecha Vencimiento</label>
+	                    <input type="text" value="16/10/2026" disabled>
+	                </div>
+	            </div>
+	
+	            <div class="modal-actions">
+	                <a href="prestamos.html" class="btn-cancelar">Cancelar</a>
+	                <a href="prestamos.html" class="btn-guardar">Registrar</a>
+	            </div>
+	        </form>
+	    </div>
+	</div>    
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
+        

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Devoluciones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+                <div>
+                    <h2>Sistema de Inventario</h2>
+                    <span>de Biblioteca</span>
+                </div>
+            </div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">
+                    <span class="icono">⌂</span><span>Inicio</span>
+                </a>
+                <a href="libros.html" class="menu-item">
+                    <span class="icono">📚</span><span>Libros</span>
+                </a>
+                <a href="usuarios.html" class="menu-item">
+                    <span class="icono">♙</span><span>Usuarios</span>
+                </a>
+                <a href="prestamos.html" class="menu-item">
+                    <span class="icono">📖</span><span>Préstamos</span>
+                </a>
+              
+                <a href="devoluciones.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">↩</span><span>Devoluciones</span>
+                </a>
+                <a href="reportes.html" class="menu-item">
+                    <span class="icono">▥</span><span>Reportes</span>
+                </a>
+            </nav>
+            <div class="cerrar-sesion">
+			    <a href="login.html">
+			        <span>↪</span>
+			        Cerrar sesión
+			    </a>
+			</div>
+        </aside>
+
+        
+        <main class="contenido-principal">
+            <header class="cabecera">
+                <div class="titulo-pagina">
+                    <h1>Retorno y Devoluciones</h1>
+                    <p>Recepción de documentos y liberación de penalizaciones</p>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="avatar">👤</span>
+                    <div class="info-perfil">
+                        <strong>Administrador</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="filtros">
+                <div class="buscador">
+                    <input id="codigo-devolucion" type="text" placeholder="Escriba el código del libro devuelto...">
+                    <button id="procesar-devolucion" class="btn-buscar" type="button">Procesar Entrada</button>
+                </div>
+            </section>
+
+            <section class="tabla-contenedor">
+                <table class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID Retorno</th>
+                            <th>Código Libro</th>
+                            <th>Título del Libro</th>
+                            <th>Nombre del Miembro</th>
+                            <th>Fecha Recibido</th>
+                            <th>Condición del Libro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>RET-401</strong></td>
+                            <td>LIB-4022</td>
+                            <td>Cien años de soledad</td>
+                            <td>Ana Lucía Torres</td>
+                            <td>02/10/2026</td>
+                            <td><span class="texto-exito">Excelente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

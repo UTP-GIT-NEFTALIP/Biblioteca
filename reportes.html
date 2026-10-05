@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Reportes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="contenedor">
+
+
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+                <div>
+                    <h2>Sistema de Inventario</h2>
+                    <span>de Biblioteca</span>
+                </div>
+            </div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">
+                    <span class="icono">⌂</span><span>Inicio</span>
+                </a>
+                <a href="libros.html" class="menu-item">
+                    <span class="icono">📚</span><span>Libros</span>
+                </a>
+                <a href="usuarios.html" class="menu-item">
+                    <span class="icono">♙</span><span>Usuarios</span>
+                </a>
+                <a href="prestamos.html" class="menu-item">
+                    <span class="icono">📖</span><span>Préstamos</span>
+                </a>
+                <a href="devoluciones.html" class="menu-item">
+                    <span class="icono">↩</span><span>Devoluciones</span>
+                </a>
+
+                <a href="reportes.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">▥</span><span>Reportes</span>
+                </a>
+            </nav>
+            <div class="cerrar-sesion">
+			    <a href="login.html">
+			        <span>↪</span>
+			        Cerrar sesión
+			    </a>
+			</div>
+        </aside>
+
+      
+        <main class="contenido-principal">
+            <header class="cabecera">
+                <div class="titulo-pagina">
+                    <h1>Estadísticas y Reportes</h1>
+                    <p>Consolidado general del estado operativo de la biblioteca</p>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="avatar">👤</span>
+                    <div class="info-perfil">
+                        <strong>Administrador</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            
+            <div class="grid-reportes">
+                
+                <div class="tarjeta-reporte">
+                    <h3>Resumen de Inventario</h3>
+                    <div class="item-reporte"><span>Total de Títulos:</span> <span class="valor-reporte">1,250</span></div>
+                    <div class="item-reporte"><span>Ejemplares Disponibles:</span> <span class="valor-reporte">1,124</span></div>
+                    <div class="item-reporte"><span>Libros en Reparación:</span> <span class="valor-reporte">8</span></div>
+                </div>
+
+                <div class="tarjeta-reporte">
+                    <h3>Estado de Circulación</h3>
+                    <div class="item-reporte"><span>Préstamos Activos:</span> <span class="valor-reporte">115</span></div>
+                    <div class="item-reporte"><span>Devoluciones de Hoy:</span> <span class="valor-reporte">1</span></div>
+                    <div class="item-reporte"><span>Libros Vencidos:</span> <span class="valor-reporte">1</span></div>
+                </div>
+
+                <div class="tarjeta-reporte">
+                    <h3>Control de Miembros</h3>
+                    <div class="item-reporte"><span>Usuarios Registrados:</span> <span class="valor-reporte">342</span></div>
+                    <div class="item-reporte"><span>Miembros Activos:</span> <span class="valor-reporte">339</span></div>
+                    <div class="item-reporte"><span>Usuarios Suspendidos / Multa:</span> <span class="valor-reporte">3</span></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

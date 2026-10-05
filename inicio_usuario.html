@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Panel de Usuario</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">📖</div>
+                <div>
+                    <h2>Portal Biblioteca</h2>
+                    <span>Área de Alumnos</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a href="inicio_usuario.html" class="menu-item activo" aria-current="page">
+                    <span class="icono">⌂</span>
+                    <span>Mi Panel / Libros</span>
+                </a>
+
+            </nav>
+
+            <div class="cerrar-sesion">
+                <a href="login.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <main class="contenido-principal">
+            
+            <header class="cabecera">
+                <div class="titulo-pagina">
+                    <h1>Bienvenido, Martín Flores</h1>
+                    <p>Consulta tus libros actuales y explora el catálogo disponible</p>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="avatar">👨‍🎓</span>
+                    <div class="info-perfil">
+                        <strong>Martín Flores</strong>
+                        <span>Estudiante</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="advertencia-banner">
+                <span class="advertencia-icono">⚠️</span>
+                <div class="advertencia-texto">
+                    <strong>¡Atención! Cuenta con una penalización pendiente</strong>
+                    El libro <em>"Don Quijote de la Mancha" (LIB-8841)</em> venció el 19/09/2026. Por favor, acérquese al mostrador de devoluciones.
+                </div>
+            </div>
+
+            <h2 class="titulo-bloque">Mi Historial de Préstamos</h2>
+            <section class="tabla-contenedor tabla-separada">
+                <table class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>Código Libro</th>
+                            <th>Título del Libro</th>
+                            <th>Fecha Préstamo</th>
+                            <th>Fecha Vencimiento</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LIB-8841</strong></td>
+                            <td>Don Quijote de la Mancha</td>
+                            <td>05/09/2026</td>
+                            <td>19/09/2026</td>
+                            <td><span class="etiqueta-estado etiqueta-alerta">Vencido</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LIB-4022</strong></td>
+                            <td>Cien años de soledad</td>
+                            <td>10/08/2026</td>
+                            <td>24/08/2026</td>
+                            <td><span class="etiqueta-estado etiqueta-exito">Devuelto</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <h2 class="titulo-bloque separado">Consultar Catálogo de Libros</h2>
+            
+            <section class="filtros filtros-separados">
+                <div class="buscador">
+                    <input id="buscar-catalogo" type="text" placeholder="Filtrar por título, autor o palabra clave...">
+                    <button id="buscar-catalogo-boton" class="btn-buscar" type="button">Buscar Libro</button>
+                </div>
+            </section>
+
+            <div class="catalogo-usuario">
+                
+                <article class="catalogo-card">
+                    <div>
+                        <img src="imagenes/libro1.jpg" alt="Portada de Cien años de soledad">
+                        <h3>Cien años de soledad</h3>
+                        <p class="autor">Autor: Gabriel García Márquez</p>
+                        <p class="clasificacion">Clasificación: Literatura / Novela</p>
+                    </div>
+                    <div class="catalogo-meta">
+                        <span class="etiqueta-estado etiqueta-exito">Disponible</span>
+                        <span class="catalogo-ubicacion">Ubicación: Estante A-4</span>
+                    </div>
+                </article>
+
+                <article class="catalogo-card no-disponible">
+                    <div>
+                        <img src="imagenes/libro2.jpg" alt="Portada de Cálculo Integral">
+                        <h3>Cálculo Integral Vol. 1</h3>
+                        <p class="autor">Autor: Granville / Smith</p>
+                        <p class="clasificacion">Clasificación: Ciencias Exactas / Matemáticas</p>
+                    </div>
+                    <div class="catalogo-meta">
+                        <span class="etiqueta-estado etiqueta-alerta">Prestado</span>
+                        <span class="catalogo-ubicacion">No disponible</span>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div>
+                        <img src="imagenes/libro3.jpg" alt="Portada de Introducción a HTML5 y CSS3">
+                        <h3>Introducción a HTML5 y CSS3</h3>
+                        <p class="autor">Autor: Alicia Ramos</p>
+                        <p class="clasificacion">Clasificación: Tecnología / Informática</p>
+                    </div>
+                    <div class="catalogo-meta">
+                        <span class="etiqueta-estado etiqueta-exito">Disponible</span>
+                        <span class="catalogo-ubicacion">Ubicación: Estante C-1</span>
+                    </div>
+                </article>
+
+                <div class="catalogo-mas">
+                    <p>📖 Siguiente en el catálogo: <em>"Don Quijote de la Mancha" (Edición Ilustrada)</em></p>
+                    <span>Mostrando 3 de 1,250 libros disponibles.</span>
+                </div>
+
+            </div>
+            
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
