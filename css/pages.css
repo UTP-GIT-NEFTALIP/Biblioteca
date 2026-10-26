@@ -1,13 +1,13 @@
 /* Componentes reutilizables de páginas secundarias */
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 1000; }
-.modal-overlay:target { opacity: 1; pointer-events: auto; }
+.modal-overlay:target, .modal-overlay.abierto { opacity: 1; pointer-events: auto; }
 .modal-box { background: #fdfaf6; padding: 30px; border-radius: 8px; width: min(460px, calc(100% - 30px)); max-height: 90vh; overflow-y: auto; box-shadow: 0 4px 15px rgba(0,0,0,.2); border: 2px solid #5a1818; }
 .modal-box h2 { color: #5a1818; margin-bottom: 5px; }
 .modal-sub { color: #666; font-size: 14px; margin-bottom: 20px; }
 .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
 .form-group { display: flex; flex-direction: column; margin-bottom: 15px; flex: 1; }
 .form-group label { font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #333; }
-.form-group input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: #f0f0f0; color: #555; }
+.form-group input, .form-group select { padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #555; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
 .btn-cancelar, .btn-guardar { padding: 10px 20px; border: 0; border-radius: 4px; font-weight: 700; text-align: center; cursor: pointer; }
 .btn-cancelar { background: #ccc; color: #333; }
@@ -55,4 +55,6 @@
 .btn-usuario { background: #fdfaf6; color: #5a1818; border: 2px solid #5a1818; }
 .btn-usuario:hover { background: #f5efe6; transform: translateY(-2px); }
 .credenciales-nota { margin-top: 10px; font-size: 12px; color: #888; }
+.aviso-aplicacion { position: fixed; right: 20px; bottom: 20px; z-index: 2000; max-width: min(380px,calc(100% - 40px)); padding: 12px 18px; border-radius: 7px; background: #385723; color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,.22); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s,transform .2s; }
+.aviso-aplicacion.visible { opacity: 1; transform: translateY(0); }
 @media (max-width:768px) { .catalogo-usuario { grid-template-columns: 1fr; } .form-row { flex-direction: column; gap: 0; } }

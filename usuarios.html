@@ -87,8 +87,8 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="usuarios-lista">
+                        <tr data-id="USR-001" data-nombre="Carlos Mendoza" data-correo="carlos.mendoza@email.com" data-tipo="Estudiante" data-estado="Activo" data-telefono="No registrado">
                             <td><strong>USR-001</strong></td>
                             <td>Carlos Mendoza</td>
                             <td>carlos.mendoza@email.com</td>
@@ -96,7 +96,7 @@
                             <td><span class="estado activo-tag">Activo</span></td>
                             <td><button class="btn-ver" type="button">Ver</button></td>
                         </tr>
-                        <tr>
+                        <tr data-id="USR-002" data-nombre="Ana Lucía Torres" data-correo="ana.torres@email.com" data-tipo="Profesor" data-estado="Activo" data-telefono="No registrado">
                             <td><strong>USR-002</strong></td>
                             <td>Ana Lucía Torres</td>
                             <td>ana.torres@email.com</td>
@@ -104,7 +104,7 @@
                             <td><span class="estado activo-tag">Activo</span></td>
                             <td><button class="btn-ver" type="button">Ver</button></td>
                         </tr>
-                        <tr>
+                        <tr data-id="USR-003" data-nombre="Martín Flores" data-correo="martin.f@email.com" data-tipo="Estudiante" data-estado="Con Multa" data-telefono="No registrado">
                             <td><strong>USR-003</strong></td>
                             <td>Martín Flores</td>
                             <td>martin.f@email.com</td>
@@ -112,7 +112,7 @@
                             <td><span class="estado deudor-tag">Con Multa</span></td>
                             <td><button class="btn-ver" type="button">Ver</button></td>
                         </tr>
-                        <tr class="fila-resumen">
+                        <tr id="usuarios-resumen" class="fila-resumen">
                             <td colspan="6">
                                 • • • Mostrando 3 de 342 usuarios registrados • • •
                             </td>
@@ -129,51 +129,70 @@
 	        <h2>Registro de Nuevo Usuario</h2>
 	        <p class="modal-sub">Formulario de inscripción para la biblioteca</p>
 	        
-	        <form class="modal-form">
+        <form id="form-usuario" class="modal-form">
 	            <div class="form-row">
 	                <div class="form-group">
-	                    <label>Primer Nombre</label>
-	                    <input type="text" value="Juan" disabled>
+                    <label for="usuario-primer-nombre">Primer Nombre</label>
+                    <input id="usuario-primer-nombre" name="primerNombre" type="text" autocomplete="given-name" required>
 	                </div>
 	                <div class="form-group">
-	                    <label>Segundo Nombre</label>
-	                    <input type="text" value="Carlos" disabled>
+                    <label for="usuario-segundo-nombre">Segundo Nombre</label>
+                    <input id="usuario-segundo-nombre" name="segundoNombre" type="text" autocomplete="additional-name">
 	                </div>
 	            </div>
 	
 	            <div class="form-row">
 	                <div class="form-group">
-	                    <label>Primer Apellido</label>
-	                    <input type="text" value="Pérez" disabled>
+                    <label for="usuario-primer-apellido">Primer Apellido</label>
+                    <input id="usuario-primer-apellido" name="primerApellido" type="text" autocomplete="family-name" required>
 	                </div>
 	                <div class="form-group">
-	                    <label>Segundo Apellido</label>
-	                    <input type="text" value="Gómez" disabled>
+                    <label for="usuario-segundo-apellido">Segundo Apellido</label>
+                    <input id="usuario-segundo-apellido" name="segundoApellido" type="text">
 	                </div>
 	            </div>
 	
 	            <div class="form-group">
-	                <label>Número de Teléfono</label>
-	                <input type="text" value="+507 6123-4567" disabled>
+                <label for="usuario-telefono">Número de Teléfono</label>
+                <input id="usuario-telefono" name="telefono" type="tel" autocomplete="tel" required>
 	            </div>
 	
 	            <div class="form-group">
-	                <label>Correo Electrónico</label>
-	                <input type="email" value="juan.perez@email.com" disabled>
+                <label for="usuario-correo">Correo Electrónico</label>
+                <input id="usuario-correo" name="correo" type="email" autocomplete="email" required>
 	            </div>
 	
 	            <div class="form-group">
-	                <label>Tipo de Miembro</label>
-	                <input type="text" value="Estudiante" disabled>
+                <label for="usuario-tipo">Tipo de Miembro</label>
+                <select id="usuario-tipo" name="tipo" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option>Estudiante</option>
+                    <option>Profesor</option>
+                    <option>Administrativo</option>
+                </select>
 	            </div>
 	
 	            <div class="modal-actions">
-	                <a href="usuarios.html" class="btn-cancelar">Cancelar</a>
-	                <a href="usuarios.html" class="btn-guardar">Añadir</a>
+                <button type="button" class="btn-cancelar" data-cerrar-modal>Cancelar</button>
+                <button type="submit" class="btn-guardar">Añadir</button>
 	            </div>
 	        </form>
 	    </div>
 	</div>
+
+    <dialog id="detalle-usuario" class="detalle-dialogo">
+        <div class="detalle-encabezado">
+            <h2 id="usuario-detalle-nombre">Detalle del usuario</h2>
+            <button type="button" class="detalle-cerrar" aria-label="Cerrar detalle">×</button>
+        </div>
+        <dl class="detalle-lista">
+            <div><dt>ID</dt><dd id="usuario-detalle-id"></dd></div>
+            <div><dt>Correo</dt><dd id="usuario-detalle-correo"></dd></div>
+            <div><dt>Teléfono</dt><dd id="usuario-detalle-telefono"></dd></div>
+            <div><dt>Tipo</dt><dd id="usuario-detalle-tipo"></dd></div>
+            <div><dt>Estado</dt><dd id="usuario-detalle-estado"></dd></div>
+        </dl>
+    </dialog>
     
     <script src="js/app.js"></script>
 </body>

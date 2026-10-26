@@ -223,7 +223,7 @@
                         <p>Consulta los libros registrados en la biblioteca</p>
                     </div>
 
-                    <button class="btn-agregar" type="button" data-mensaje="Formulario de alta de libros listo para conectarse a la base de datos.">
+                    <button class="btn-agregar" type="button" data-abrir-modal="modal-libro">
                         + Agregar libro
                     </button>
 
@@ -249,7 +249,7 @@
                         </thead>
 
 
-                        <tbody>
+                        <tbody id="libros-lista">
 
                             <tr class="fila-libro" data-titulo="Cien años de soledad" data-autor="Gabriel García Márquez" data-isbn="978-0307474728" data-categoria="Novela" data-estado="Disponible" data-ubicacion="Estante A3">
 
@@ -403,7 +403,7 @@
 
                             </tr>
                             
-                            <tr class="fila-resumen">
+                            <tr id="libros-resumen" class="fila-resumen">
                             <td colspan="7">
                                 • • • Mostrando 3 de 1,250 ejemplares en inventario • • •
                             </td>
@@ -426,6 +426,66 @@
         </main>
 
     </div>
+
+    <div id="modal-libro" class="modal-overlay" aria-hidden="true">
+        <div class="modal-box">
+            <h2>Registro de Nuevo Libro</h2>
+            <p class="modal-sub">Añada un ejemplar al inventario</p>
+            <form id="form-libro" class="modal-form">
+                <div class="form-group">
+                    <label for="libro-titulo">Título</label>
+                    <input id="libro-titulo" name="titulo" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="libro-autor">Autor</label>
+                    <input id="libro-autor" name="autor" type="text" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="libro-isbn">ISBN</label>
+                        <input id="libro-isbn" name="isbn" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="libro-categoria">Categoría</label>
+                        <select id="libro-categoria" name="categoria" required>
+                            <option value="">Seleccione</option>
+                            <option>Novela</option><option>Ficción</option><option>Historia</option><option>Informática</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="libro-estado">Estado</label>
+                        <select id="libro-estado" name="estado" required>
+                            <option>Disponible</option><option>Prestado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="libro-ubicacion">Ubicación</label>
+                        <input id="libro-ubicacion" name="ubicacion" type="text" placeholder="Estante E1" required>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancelar" data-cerrar-modal>Cancelar</button>
+                    <button type="submit" class="btn-guardar">Guardar libro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <dialog id="detalle-libro" class="detalle-dialogo">
+        <div class="detalle-encabezado">
+            <h2 id="detalle-titulo">Detalle del libro</h2>
+            <button type="button" class="detalle-cerrar" aria-label="Cerrar detalle">×</button>
+        </div>
+        <dl class="detalle-lista">
+            <div><dt>Autor</dt><dd id="detalle-autor"></dd></div>
+            <div><dt>ISBN</dt><dd id="detalle-isbn"></dd></div>
+            <div><dt>Categoría</dt><dd id="detalle-categoria"></dd></div>
+            <div><dt>Estado</dt><dd id="detalle-estado"></dd></div>
+            <div><dt>Ubicación</dt><dd id="detalle-ubicacion"></dd></div>
+        </dl>
+    </dialog>
 
     <script src="js/app.js"></script>
 </body>

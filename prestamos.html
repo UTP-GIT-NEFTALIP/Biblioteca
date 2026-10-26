@@ -85,8 +85,8 @@
                             <th>Estado</th>
                         </tr>
                     </thead>
-					<tbody>
-                        <tr>
+					<tbody id="prestamos-lista">
+                        <tr data-id="PRST-901">
                             <td><strong>PRST-901</strong></td>
                             <td>LIB-1057</td> 
                             <td>Cálculo Integral Vol. 1</td>
@@ -96,7 +96,7 @@
                             <td>02/10/2026</td>
                             <td><span class="etiqueta-estado etiqueta-alerta">Prestado</span></td>
                         </tr>
-                        <tr>
+                        <tr data-id="PRST-902">
                             <td><strong>PRST-902</strong></td>
                             <td>LIB-8841</td>
                             <td>Don Quijote de la Mancha</td>
@@ -106,7 +106,7 @@
                             <td>19/09/2026</td>
                             <td><span class="etiqueta-estado etiqueta-alerta">Vencido</span></td>
                         </tr>
-                        <tr>
+                        <tr data-id="PRST-903">
                             <td><strong>PRST-903</strong></td>
                             <td>LIB-4022</td> 
                             <td>Cien años de soledad</td>
@@ -117,7 +117,7 @@
                             <td><span class="etiqueta-estado etiqueta-exito">Devuelto</span></td>
                         </tr>
                         
-                        <tr class="fila-resumen">
+                        <tr id="prestamos-resumen" class="fila-resumen">
                             <td colspan="8">
                                 • • • Mostrando 3 de 115 ejemplares en préstamos • • •
                             </td>
@@ -135,42 +135,42 @@
 	        <h2>Registrar Nuevo Préstamo</h2>
 	        <p class="modal-sub">Asignación de libros a usuarios registrados</p>
 	        
-	        <form class="modal-form">
+	        <form id="form-prestamo" class="modal-form">
 	            <div class="form-group">
-	                <label>Código del Libro</label>
-	                <input type="text" value="LIB-1057" disabled>
+	                <label for="prestamo-codigo-libro">Código del Libro</label>
+	                <input id="prestamo-codigo-libro" name="codigoLibro" type="text" placeholder="LIB-1057" required>
 	            </div>
 	
 	            <div class="form-group">
-	                <label>Título del Libro</label>
-	                <input type="text" value="Cálculo Integral Vol. 1" disabled>
+	                <label for="prestamo-titulo-libro">Título del Libro</label>
+	                <input id="prestamo-titulo-libro" name="tituloLibro" type="text" required>
 	            </div>
 	
 	            <div class="form-row">
 	                <div class="form-group">
-	                    <label>ID Usuario</label>
-	                    <input type="text" value="USR-001" disabled>
+	                    <label for="prestamo-id-usuario">ID Usuario</label>
+	                    <input id="prestamo-id-usuario" name="idUsuario" type="text" placeholder="USR-001" required>
 	                </div>
 	                <div class="form-group">
-	                    <label>Nombre del Miembro</label>
-	                    <input type="text" value="Carlos Mendoza" disabled>
+	                    <label for="prestamo-miembro">Nombre del Miembro</label>
+	                    <input id="prestamo-miembro" name="miembro" type="text" required>
 	                </div>
 	            </div>
 	
 	            <div class="form-row">
 	                <div class="form-group">
-	                    <label>Fecha Préstamo</label>
-	                    <input type="text" value="02/10/2026" disabled>
+	                    <label for="prestamo-fecha">Fecha Préstamo</label>
+	                    <input id="prestamo-fecha" name="fechaPrestamo" type="date" required>
 	                </div>
 	                <div class="form-group">
-	                    <label>Fecha Vencimiento</label>
-	                    <input type="text" value="16/10/2026" disabled>
+	                    <label for="prestamo-vencimiento">Fecha Vencimiento</label>
+	                    <input id="prestamo-vencimiento" name="fechaVencimiento" type="date" required>
 	                </div>
 	            </div>
 	
 	            <div class="modal-actions">
-	                <a href="prestamos.html" class="btn-cancelar">Cancelar</a>
-	                <a href="prestamos.html" class="btn-guardar">Registrar</a>
+	                <button type="button" class="btn-cancelar" data-cerrar-modal>Cancelar</button>
+	                <button type="submit" class="btn-guardar">Registrar</button>
 	            </div>
 	        </form>
 	    </div>
